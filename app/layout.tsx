@@ -1,67 +1,79 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import Script from "next/script"
 import { Toaster } from "@/components/ui/toaster"
 import SeoSchema from "@/components/seo-schema"
 import DonationPopup from "@/components/donation-popup"
+import {
+  SITE_URL,
+  DEFAULT_OG_IMAGE,
+  generateChessOrganizationSchema,
+  generateWebSiteSchema,
+} from "@/lib/seo-utils"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Simmon Chang Chess Club | CFC-Rated Tournaments for Cancer Research",
+    default: "Simmon Chang Chess Club | CFC-Rated Chess Tournaments for Cancer Research",
     template: "%s | Simmon Chang Chess Club",
   },
   description:
-    "Simmon Chang Chess Club conducts CFC-rated chess tournaments to raise funds for cancer research. Join our community of chess players supporting the Pediatric Cancer Research Foundation (PCRF). Named after Simmon Chang, who passed away from osteosarcoma.",
+    "The Dr. Interested Simmon Chang Chess (Against Cancer) Club runs CFC-rated chess tournaments that raise funds for the Pediatric Cancer Research Foundation. Named after Simmon Chang, a young chess player who passed away from osteosarcoma. Play competitive chess and support pediatric cancer research.",
+  applicationName: "Simmon Chang Chess Club",
   keywords: [
     "chess club",
     "CFC rated tournaments",
     "chess tournaments",
+    "chess against cancer",
     "cancer research fundraiser",
     "pediatric cancer research",
     "PCRF",
+    "Pediatric Cancer Research Foundation",
     "Simmon Chang",
+    "Simmon Chang Chess Club",
     "chess community",
     "Dr. Interested",
-    "chess events",
+    "charity chess tournament",
+    "youth chess",
+    "Lichess tournament",
   ],
-  authors: [{ name: "Simmon Chang Chess Club" }],
-  creator: "Simmon Chang Chess Club",
-  publisher: "Simmon Chang Chess Club",
+  authors: [{ name: "Dr. Interested", url: "https://www.drinterested.org" }],
+  creator: "Dr. Interested Simmon Chang Chess Club",
+  publisher: "Dr. Interested",
   category: "Games & Recreation",
-  classification: "Chess Tournaments",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://chess.drinterested.org",
-    title: "Simmon Chang Chess Club - CFC-Rated Tournaments",
+    url: SITE_URL,
+    title: "Simmon Chang Chess Club — CFC-Rated Chess Tournaments for Cancer Research",
     description:
-      "Join our chess tournaments and support cancer research through the Pediatric Cancer Research Foundation.",
-    siteName: "Simmon Chang Chess Club",
+      "Play CFC-rated chess tournaments and support the Pediatric Cancer Research Foundation. A Dr. Interested initiative in honour of Simmon Chang.",
+    siteName: "Dr. Interested Simmon Chang Chess Club",
     images: [
       {
-        url: "https://chess.drinterested.org/og-image.png",
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Simmon Chang Chess Club",
+        alt: "Dr. Interested Simmon Chang Chess Club",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Simmon Chang Chess Club - Support Cancer Research",
-    description: "Play chess, support cancer research. Join our CFC-rated tournaments.",
-    images: ["https://chess.drinterested.org/og-image.png"],
+    title: "Simmon Chang Chess Club — Chess Tournaments for Cancer Research",
+    description: "Play CFC-rated chess, support pediatric cancer research. A Dr. Interested initiative.",
+    images: [DEFAULT_OG_IMAGE],
+    creator: "@DrInterested",
   },
   alternates: {
-    canonical: "https://chess.drinterested.org",
+    canonical: SITE_URL,
   },
   robots: {
     index: true,
@@ -69,14 +81,20 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: [
     { rel: "icon", url: "/favicon.ico" },
-    { rel: "apple-touch-icon", url: "/logo.png" },
+    { rel: "icon", type: "image/png", sizes: "16x16", url: "/favicon-16x16.png" },
+    { rel: "icon", type: "image/png", sizes: "32x32", url: "/favicon-32x32.png" },
+    { rel: "apple-touch-icon", sizes: "180x180", url: "/apple-touch-icon.png" },
   ],
-  metadataBase: new URL("https://chess.drinterested.org"),
-    generator: 'v0.app'
+  // Add the Google Search Console token here once the chess.drinterested.org property is
+  // verified, e.g. verification: { google: "<token>" }.
+  generator: "Next.js",
 }
 
 export const viewport: Viewport = {
@@ -97,14 +115,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="author" content="Simmon Chang Chess Club" />
-        <meta name="copyright" content="Simmon Chang Chess Club 2025" />
-      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <SeoSchema
+            id="site-schema"
+            schema={[generateChessOrganizationSchema(), generateWebSiteSchema()]}
+          />
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1" role="main">
