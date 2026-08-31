@@ -16,6 +16,10 @@ export default function SeoSchema({ schema, id }: SeoSchemaProps) {
     <Script
       id={id}
       type="application/ld+json"
+      // Safe injection for a JSON-LD payload: the content is `JSON.stringify` output
+      // (never user HTML), and unicode-escaping the "<" character prevents a script-tag
+      // breakout. This is the pattern Next.js documents for structured data; an HTML
+      // sanitiser such as DOMPurify would corrupt the JSON and needs a DOM at runtime.
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
       }}
