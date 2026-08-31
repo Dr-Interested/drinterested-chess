@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Calendar, Clock, MapPin, Users, Trophy, ExternalLink, Heart, ArrowRight } from 'lucide-react'
+import { Calendar, Clock, Users, Trophy, Heart } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
@@ -21,7 +21,17 @@ export default function TournamentsPage() {
           <motion.div initial="hidden" animate="visible" variants={fadeIn} className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-[#405862] mb-4">Chess Tournaments</h1>
             <p className="text-lg text-[#405862]/80 max-w-2xl mx-auto">
-              Join our CFC-rated tournaments. Play competitive chess while supporting cancer research.
+              Our CFC-rated tournaments let you play competitive chess while supporting cancer research. New events are
+              announced on our{" "}
+              <Link
+                href="https://discord.gg/pzbGRgsGXY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#405862] font-medium underline hover:text-[#4ecdc4]"
+              >
+                Discord
+              </Link>
+              .
             </p>
           </motion.div>
         </div>
@@ -38,8 +48,8 @@ export default function TournamentsPage() {
             className="max-w-2xl"
           >
             <div className="mb-12">
-              <div className="inline-block bg-[#4ecdc4]/10 px-3 py-1 rounded-full text-[#405862] font-medium text-sm mb-4">
-                Upcoming
+              <div className="inline-block bg-[#405862]/10 px-3 py-1 rounded-full text-[#405862] font-medium text-sm mb-4">
+                Completed
               </div>
               <Card className="overflow-hidden border-[#405862]/10 shadow-md hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
@@ -66,20 +76,14 @@ export default function TournamentsPage() {
 
                   {/* Registration Details */}
                   <div className="bg-[#f5f1eb] rounded-lg p-6 mb-8">
-                    <h4 className="font-bold text-[#405862] mb-4">Registration Information</h4>
+                    <h4 className="font-bold text-[#405862] mb-4">Registration</h4>
                     <div className="space-y-3 text-[#405862]/80">
                       <p>
-                        <span className="font-semibold">Entry Fee:</span> $15
+                        <span className="font-semibold">Entry Fee:</span> $15 (donated in full to PCRF)
                       </p>
                       <p>
-                        <span className="font-semibold">Steps:</span>
+                        Registration for this event has closed. Thank you to everyone who played and donated.
                       </p>
-                      <ol className="list-decimal list-inside space-y-2 ml-2">
-                        <li>Complete the registration form</li>
-                        <li>Send an Interac e-transfer of $15</li>
-                        <li>Include your Lichess username, name, and CFC-ID in the transfer</li>
-                        <li>Send to: redlory23@gmail.com</li>
-                      </ol>
                     </div>
                   </div>
 
@@ -98,15 +102,8 @@ export default function TournamentsPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <Button asChild className="w-full bg-[#405862] hover:bg-[#334852] h-11 text-base">
-                      <Link
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfav0IgNIVgBY1IGU4VhrQEsC0-UkRDA_GXYgdsmqJw93ku4Q/viewform"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Register Now
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </Link>
+                    <Button disabled className="w-full bg-[#405862]/60 h-11 text-base cursor-not-allowed">
+                      Registration Closed
                     </Button>
                     <Link
                       href="https://cure.pcrf-kids.org/DrInterested"

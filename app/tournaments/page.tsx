@@ -26,17 +26,16 @@ export default function TournamentsPage() {
             { name: "Home", url: "/" },
             { name: "Tournaments", url: "/tournaments" },
           ]),
+          // Completed event — kept for history. Registration is closed, so no live
+          // Offer is emitted (see generateSportsEventSchema).
           generateSportsEventSchema({
             name: "Weiss Open (CFC Rated)",
             description:
               "A CFC-rated rapid (10+5) Swiss chess tournament over 5 rounds. $15 entry fee, with 100% of proceeds donated to the Pediatric Cancer Research Foundation.",
-            startDate: "2025-12-28",
+            startDate: "2025-12-28T00:00:00-05:00",
+            endDate: "2025-12-28T23:59:00-05:00",
             onlineUrl: `${SITE_URL}/tournaments`,
             url: `${SITE_URL}/tournaments`,
-            registrationUrl:
-              "https://docs.google.com/forms/d/e/1FAIpQLSfav0IgNIVgBY1IGU4VhrQEsC0-UkRDA_GXYgdsmqJw93ku4Q/viewform",
-            price: "15",
-            priceCurrency: "CAD",
           }),
         ]}
       />

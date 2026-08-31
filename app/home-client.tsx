@@ -243,12 +243,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Upcoming Tournaments Section */}
+      {/* Tournaments Section */}
       <section className="py-12 md:py-16 bg-white">
         <div className="container">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-[#405862] flex items-center">
-              Upcoming Tournaments
+              Tournaments
               <div className="w-12 h-1 bg-[#4ecdc4] ml-4"></div>
             </h2>
             <Link href="/tournaments" className="text-[#405862] hover:text-[#4ecdc4] text-sm flex items-center group">
@@ -269,7 +269,7 @@ export default function HomePage() {
                   <div>
                     <h3 className="text-2xl font-bold text-[#405862] mb-2">Weiss Open (CFC Rated)</h3>
                     <div className="inline-block bg-[#405862]/10 px-3 py-1 rounded-full text-[#405862] font-medium text-sm mb-4">
-                      Registration Open
+                      Registration Closed
                     </div>
                   </div>
                 </div>
@@ -290,8 +290,8 @@ export default function HomePage() {
                 </div>
 
                 <p className="text-[#405862]/80 mb-4">
-                  Entry Fee: $15. Complete the registration form and send an interac e-transfer with your lichess
-                  username, name, and CFC-ID to redlory23@gmail.com.
+                  Entry Fee: $15. Registration for this event has now closed. Thank you to everyone who took part —
+                  every entry fee went to the Pediatric Cancer Research Foundation.
                 </p>
 
                 <div className="bg-[#4ecdc4]/10 border border-[#4ecdc4]/20 rounded-lg p-4 mb-6">
@@ -301,15 +301,21 @@ export default function HomePage() {
                   </p>
                 </div>
 
-                <Button asChild className="w-full bg-[#405862] hover:bg-[#334852] h-10">
+                <Button disabled className="w-full bg-[#405862]/60 h-10 cursor-not-allowed">
+                  Registration Closed
+                </Button>
+                <p className="text-center text-sm text-[#405862]/70 mt-3">
+                  Want to hear about the next tournament?{" "}
                   <Link
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfav0IgNIVgBY1IGU4VhrQEsC0-UkRDA_GXYgdsmqJw93ku4Q/viewform"
+                    href="https://discord.gg/pzbGRgsGXY"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="text-[#405862] font-medium underline hover:text-[#4ecdc4]"
                   >
-                    Register Now
+                    Join our Discord
                   </Link>
-                </Button>
+                  .
+                </p>
               </CardContent>
             </Card>
           </motion.div>
@@ -345,7 +351,7 @@ export default function HomePage() {
                 },
                 {
                   q: "How do I register for a tournament?",
-                  a: "Complete the online registration form linked on our Tournaments page, then send the entry fee by Interac e-transfer including your Lichess username, name, and CFC ID. Full instructions are on the Tournaments page.",
+                  a: "When registration for an event is open, you complete the online form linked on our Tournaments page and send the $15 entry fee by Interac e-transfer with your Lichess username, name, and CFC ID. New tournaments are announced on our Discord.",
                 },
               ].map((item) => (
                 <details

@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "How do I register for a tournament?",
     answer:
-      "Complete the online registration form linked on our Tournaments page, then send the entry fee by Interac e-transfer including your Lichess username, name, and CFC ID. Full instructions are on the Tournaments page.",
+      "When registration for an event is open, you complete the online form linked on our Tournaments page and send the $15 entry fee by Interac e-transfer with your Lichess username, name, and CFC ID. New tournaments are announced on our Discord.",
   },
 ]
 
