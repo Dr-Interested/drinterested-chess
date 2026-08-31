@@ -2,28 +2,38 @@ import type { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Simmon Chang Chess Club",
+    id: "/",
+    name: "Dr. Interested Simmon Chang Chess Club",
     short_name: "SC Chess Club",
     description:
-      "Simmon Chang Chess Club conducts CFC-rated chess tournaments to raise funds for cancer research. Join our community of chess players supporting the Pediatric Cancer Research Foundation (PCRF). Named after Simmon Chang, who passed away from osteosarcoma.",
+      "CFC-rated chess tournaments that raise funds for the Pediatric Cancer Research Foundation, in honour of Simmon Chang. A Dr. Interested initiative.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
+    background_color: "#f5f1eb",
     theme_color: "#405862",
     orientation: "portrait-primary",
     scope: "/",
     lang: "en-US",
-    categories: ["games", "recreation", "nonprofit"],
+    dir: "ltr",
+    categories: ["games", "education", "nonprofit"],
     icons: [
       {
         src: "/android-chrome-192x192.png",
         sizes: "192x192",
         type: "image/png",
+        purpose: "any",
       },
       {
         src: "/android-chrome-512x512.png",
         sizes: "512x512",
         type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
       },
       {
         src: "/apple-touch-icon.png",
@@ -39,11 +49,6 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/favicon-16x16.png",
         sizes: "16x16",
         type: "image/png",
-      },
-      {
-        src: "/favicon.ico",
-        sizes: "any",
-        type: "image/x-icon",
       },
     ],
   }

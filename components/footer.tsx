@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Instagram, Linkedin, Mail, ExternalLink } from 'lucide-react'
+import { Instagram, Linkedin, Mail, ExternalLink } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -15,7 +15,7 @@ export default function Footer() {
               <div className="relative w-12 h-12 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-110">
                 <Image
                   src="/logo.png"
-                  alt="Simmon Chang Chess Club Logo"
+                  alt="Dr. Interested Simmon Chang Chess Club logo"
                   fill
                   className="rounded-full object-cover"
                   sizes="48px"
@@ -27,9 +27,9 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
-              The Dr. Interested Simmon Chang Chess Club conducts CFC-rated chess tournaments to raise funds for the
-              Pediatric Cancer Research Foundation. Named in honor of Simmon Chang, whose legacy inspires us to fight
-              childhood cancer through chess.
+              The Dr. Interested Simmon Chang Chess (Against Cancer) Club conducts CFC-rated chess tournaments to raise
+              funds for the Pediatric Cancer Research Foundation. Named in honour of Simmon Chang, whose legacy inspires
+              us to fight childhood cancer through chess.
             </p>
             <div className="flex items-center gap-4">
               <Link
@@ -37,7 +37,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-[#4ecdc4] transition-colors hover:scale-110 duration-200"
-                aria-label="Join Dr. Interested Discord community"
+                aria-label="Join the Dr. Interested Discord community"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ export default function Footer() {
                 <Linkedin className="h-6 w-6" aria-hidden="true" />
               </Link>
               <Link
-                href="mailto:admin@drinterested.tech"
+                href="mailto:admin@drinterested.org"
                 className="text-gray-300 hover:text-[#4ecdc4] transition-colors hover:scale-110 duration-200"
                 aria-label="Email Dr. Interested"
               >
@@ -90,65 +90,60 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4 text-[#4ecdc4]">Chess Club</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors flex items-center gap-1">
+                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/tournaments" className="text-gray-300 hover:text-white transition-colors flex items-center gap-1">
+                <Link href="/tournaments" className="text-gray-300 hover:text-white transition-colors">
                   Tournaments
                 </Link>
               </li>
               <li>
-                <Link href="/impact" className="text-gray-300 hover:text-white transition-colors flex items-center gap-1">
-                  Impact & Donate
+                <Link href="/impact" className="text-gray-300 hover:text-white transition-colors">
+                  Impact &amp; Donate
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.drinterested.org"
+                  className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Dr. Interested <ExternalLink className="h-3 w-3" />
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Main Website Links */}
+          {/* Legal Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-[#4ecdc4]">Main Website</h3>
+            <h3 className="font-semibold text-lg mb-4 text-[#4ecdc4]">Legal</h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  href="https://drinterested.tech"
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Home <ExternalLink className="h-3 w-3" />
+                <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">
+                  Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link
-                  href="https://drinterested.tech/our-work"
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Our Work <ExternalLink className="h-3 w-3" />
+                <Link href="/terms" className="text-gray-300 hover:text-white transition-colors">
+                  Terms &amp; Conditions
                 </Link>
               </li>
               <li>
-                <Link
-                  href="https://drinterested.tech/events"
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Events <ExternalLink className="h-3 w-3" />
+                <Link href="/ai-policy" className="text-gray-300 hover:text-white transition-colors">
+                  AI Policy
                 </Link>
               </li>
               <li>
-                <Link
-                  href="https://drinterested.tech/blog"
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Blog <ExternalLink className="h-3 w-3" />
+                <Link href="/safeguarding-policy" className="text-gray-300 hover:text-white transition-colors">
+                  Safeguarding Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/media-consent" className="text-gray-300 hover:text-white transition-colors">
+                  Media Consent
                 </Link>
               </li>
             </ul>
@@ -163,20 +158,10 @@ export default function Footer() {
               <p className="mt-1">CFC-rated chess tournaments supporting the Pediatric Cancer Research Foundation.</p>
             </div>
             <div className="flex items-center gap-6 text-sm">
-              <Link
-                href="https://drinterested.tech/privacy-policy"
-                className="text-gray-300 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link
-                href="https://drinterested.tech/terms"
-                className="text-gray-300 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="/terms" className="text-gray-300 hover:text-white transition-colors">
                 Terms of Service
               </Link>
             </div>
