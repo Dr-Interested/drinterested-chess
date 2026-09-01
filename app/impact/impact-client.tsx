@@ -27,7 +27,7 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* Impact Section   */}
+      {/* Impact Section*/}
       <section className="py-12 md:py-16 bg-white flex-1">
         <div className="container max-w-4xl">
           <motion.div
